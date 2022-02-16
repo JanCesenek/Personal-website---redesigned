@@ -1,0 +1,10 @@
+@import "assets/Mixins/Mixins.module.scss";
+
+.App {
+  text-align: center;
+  @include fullSizeRel;
+}
+
+.Align {
+  @include fullSizeRel;
+}

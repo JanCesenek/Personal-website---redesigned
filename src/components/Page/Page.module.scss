@@ -1,0 +1,91 @@
+.Page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  & > * {
+    margin-top: 2rem;
+  }
+}
+
+.Title {
+  font-family: "Syne Mono", monospace;
+  border: 1px solid var(--cl-yellow);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem var(--cl-orange);
+  color: var(--cl-orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  align-self: center;
+}
+
+.AllBubbles {
+  display: grid;
+  gap: 5rem;
+  margin: 10rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 15rem;
+
+  &__Five {
+    grid-template-areas:
+      "a a a . b b b"
+      ". . c c c . ."
+      "d d d . e e e";
+  }
+
+  &__Six {
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f";
+  }
+
+  &__1stBubble {
+    grid-area: a;
+  }
+
+  &__2ndBubble {
+    grid-area: b;
+  }
+
+  &__3rdBubble {
+    grid-area: c;
+  }
+
+  &__4thBubble {
+    grid-area: d;
+  }
+
+  &__5thBubble {
+    grid-area: e;
+  }
+
+  &__6thBubble {
+    grid-area: f;
+  }
+}
+
+.Hidden {
+  display: none;
+}
+
+.ArrowContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  & > *:hover {
+    cursor: pointer;
+  }
+
+  &__Left {
+    margin-left: 5rem;
+  }
+
+  &__Right {
+    margin-right: 5rem;
+  }
+}
