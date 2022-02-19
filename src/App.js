@@ -3,14 +3,20 @@ import Page from "./components/Page/Page";
 import React, { useState } from "react";
 
 function App() {
-  const [shown, setShown] = useState(null);
+  const [firstPage, setFirstPage] = useState(true);
+  const [secondPage, setSecondPage] = useState(false);
+  const [thirdPage, setThirdPage] = useState(false);
 
-  const hidePage = () => {
-    setShown(false);
+  const setFirst = () => {
+    setFirstPage(!firstPage);
   };
 
-  const showPage = () => {
-    setShown(true);
+  const setSecond = () => {
+    setSecondPage(!secondPage);
+  };
+
+  const setThird = () => {
+    setThirdPage(!thirdPage);
   };
 
   return (
@@ -18,9 +24,8 @@ function App() {
       <div className="Align">
         <Page
           type="Five"
-          shown={shown}
           pageNumber="One"
-          title="Johnny Garlic - royal quality websites"
+          title="Johnny Garlic - modern websites suited for your needs"
           firstBubbleTitle="What do I do for living?"
           firstBubbleContent="I make modern, responsive website suited exactly for your needs."
           secondBubbleTitle="Why should you choose me?"
@@ -31,12 +36,17 @@ function App() {
           fourthBubbleContent="Lorem ipsum."
           fifthBubbleTitle="How can you be sure I am flexible and will make you any website that you need?"
           fifthBubbleContent="Lorem ipsum."
-          showPage={showPage}
-          hidePage={hidePage}
+          firstPage={firstPage}
+          secondPage={secondPage}
+          thirdPage={thirdPage}
+          changeFirstPage={setFirst}
+          changeSecondPage={setSecond}
+          changeThirdPage={setThird}
         />
+      </div>
+      <div className="Align">
         <Page
           type="Six"
-          shown={shown === null ? false : shown}
           pageNumber="Two"
           title="My web designs"
           firstBubbleTitle="Design 1"
@@ -51,12 +61,17 @@ function App() {
           fifthBubbleContent="Answer 5"
           sixthBubbleTitle="Design 6"
           sixthBubbleContent="Answer 6"
-          showPage={showPage}
-          hidePage={hidePage}
+          firstPage={firstPage}
+          secondPage={secondPage}
+          thirdPage={thirdPage}
+          changeFirstPage={setFirst}
+          changeSecondPage={setSecond}
+          changeThirdPage={setThird}
         />
+      </div>
+      <div className="Align">
         <Page
           type="Six"
-          shown={shown === null ? false : shown}
           pageNumber="Three"
           title="My applications"
           firstBubbleTitle="Application 1"
@@ -71,8 +86,12 @@ function App() {
           fifthBubbleContent="Answer 5"
           sixthBubbleTitle="Application 6"
           sixthBubbleContent="Answer 6"
-          showPage={showPage}
-          hidePage={hidePage}
+          firstPage={firstPage}
+          secondPage={secondPage}
+          thirdPage={thirdPage}
+          changeFirstPage={setFirst}
+          changeSecondPage={setSecond}
+          changeThirdPage={setThird}
         />
       </div>
     </div>

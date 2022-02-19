@@ -6,6 +6,11 @@ const Page = (props) => {
   const five = `${classes.AllBubbles} ${classes.AllBubbles__Five}`;
   const six = `${classes.AllBubbles} ${classes.AllBubbles__Six}`;
 
+  const pageIdentifier0 = props.pageNumber === "Two" ? props.secondPage : props.thirdPage;
+  const pageIdentifier = props.pageNumber === "One" ? props.firstPage : pageIdentifier0;
+
+  const pageClasses = `${classes.Page} ${!pageIdentifier && classes.Hidden}`;
+
   const dynamicBubble =
     props.type === "Five"
       ? classes.Hidden
@@ -23,12 +28,32 @@ const Page = (props) => {
 
   const leftArrowRule = () => {
     if (props.pageNumber === "One") {
-      props.hidePage();
+      props.changeFirstPage();
+      props.changeThirdPage();
+    } else if (props.pageNumber === "Two") {
+      props.changeSecondPage();
+      props.changeFirstPage();
+    } else if (props.pageNumber === "Three") {
+      props.changeThirdPage();
+      props.changeFirstPage();
+    }
+  };
+
+  const rightArrowRule = () => {
+    if (props.pageNumber === "One") {
+      props.changeFirstPage();
+      props.changeSecondPage();
+    } else if (props.pageNumber === "Two") {
+      props.changeSecondPage();
+      props.changeThirdPage();
+    } else if (props.pageNumber === "Three") {
+      props.changeThirdPage();
+      props.changeFirstPage();
     }
   };
 
   return (
-    <div className={props.shown === true || props.shown === null ? classes.Page : classes.Hidden}>
+    <div className={pageClasses}>
       <div className={classes.Title}>
         <h1>{props.title}</h1>
       </div>
@@ -36,7 +61,9 @@ const Page = (props) => {
         <div className={classes.ArrowContainer__Left} onClick={leftArrowRule}>
           &#10094;
         </div>
-        <div className={classes.ArrowContainer__Right}>&#10095;</div>
+        <div className={classes.ArrowContainer__Right} onClick={rightArrowRule}>
+          &#10095;
+        </div>
       </div>
       <div className={props.type === "Five" ? five : six}>
         <div className={`${classes.AllBubbles__1stBubble} ${classes.AllBubbles__SingleBubble}`}>

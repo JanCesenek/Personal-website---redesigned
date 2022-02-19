@@ -8,3 +8,7 @@
 .Align {
   @include fullSizeRel;
 }
+
+.Hidden {
+  display: none;
+}
