@@ -1,0 +1,51 @@
+@keyframes fromLeft {
+  0% {
+    transform: translateX(-100rem);
+    opacity: 0.2;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+
+  70% {
+    transform: translateX(30rem);
+    opacity: 0.7;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+}
+
+@keyframes fromRight {
+  0% {
+    transform: translateX(100rem);
+    opacity: 0.2;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+
+  70% {
+    transform: translateX(-30rem);
+    opacity: 0.7;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+}
+
+@keyframes center {
+  0% {
+    opacity: 0;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+
+  100% {
+    opacity: 1;
+    filter: drop-shadow(1rem 2rem 4rem gold);
+  }
+}

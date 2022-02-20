@@ -14,7 +14,7 @@ const Page = (props) => {
   const dynamicBubble =
     props.type === "Five"
       ? classes.Hidden
-      : `${classes.AllBubbles__6thBubble} ${classes.AllBubbles__SingleBubble}`;
+      : `${classes.AllBubbles__6thBubble} ${classes.AllBubbles__SingleBubble} ${classes.AllBubbles__RightAnimation}`;
 
   const [hidden, setHidden] = useState(false);
 
@@ -35,7 +35,7 @@ const Page = (props) => {
       props.changeFirstPage();
     } else if (props.pageNumber === "Three") {
       props.changeThirdPage();
-      props.changeFirstPage();
+      props.changeSecondPage();
     }
   };
 
@@ -54,7 +54,7 @@ const Page = (props) => {
 
   return (
     <div className={pageClasses}>
-      <div className={classes.Title}>
+      <div className={`${classes.Title} ${classes.AllBubbles__CenterAnimation}`}>
         <h1>{props.title}</h1>
       </div>
       <div className={classes.ArrowContainer}>
@@ -66,7 +66,8 @@ const Page = (props) => {
         </div>
       </div>
       <div className={props.type === "Five" ? five : six}>
-        <div className={`${classes.AllBubbles__1stBubble} ${classes.AllBubbles__SingleBubble}`}>
+        <div
+          className={`${classes.AllBubbles__1stBubble} ${classes.AllBubbles__SingleBubble} ${classes.AllBubbles__LeftAnimation}`}>
           <Bubble
             title={props.firstBubbleTitle}
             content={props.firstBubbleContent}
@@ -75,7 +76,8 @@ const Page = (props) => {
             showBubble={showBubble}
           />
         </div>
-        <div className={`${classes.AllBubbles__2ndBubble} ${classes.AllBubbles__SingleBubble}`}>
+        <div
+          className={`${classes.AllBubbles__2ndBubble} ${classes.AllBubbles__SingleBubble} ${classes.AllBubbles__RightAnimation}`}>
           <Bubble
             title={props.secondBubbleTitle}
             content={props.secondBubbleContent}
@@ -84,7 +86,12 @@ const Page = (props) => {
             showBubble={showBubble}
           />
         </div>
-        <div className={`${classes.AllBubbles__3rdBubble} ${classes.AllBubbles__SingleBubble}`}>
+        <div
+          className={`${classes.AllBubbles__3rdBubble} ${classes.AllBubbles__SingleBubble} ${
+            props.type === "Five"
+              ? classes.AllBubbles__CenterAnimation
+              : classes.AllBubbles__LeftAnimation
+          }`}>
           <Bubble
             title={props.thirdBubbleTitle}
             content={props.thirdBubbleContent}
@@ -93,7 +100,12 @@ const Page = (props) => {
             showBubble={showBubble}
           />
         </div>
-        <div className={`${classes.AllBubbles__4thBubble} ${classes.AllBubbles__SingleBubble}`}>
+        <div
+          className={`${classes.AllBubbles__4thBubble} ${classes.AllBubbles__SingleBubble} ${
+            props.type === "Five"
+              ? classes.AllBubbles__LeftAnimation
+              : classes.AllBubbles__RightAnimation
+          }`}>
           <Bubble
             title={props.fourthBubbleTitle}
             content={props.fourthBubbleContent}
@@ -102,7 +114,12 @@ const Page = (props) => {
             showBubble={showBubble}
           />
         </div>
-        <div className={`${classes.AllBubbles__5thBubble} ${classes.AllBubbles__SingleBubble}`}>
+        <div
+          className={`${classes.AllBubbles__5thBubble} ${classes.AllBubbles__SingleBubble} ${
+            props.type === "Five"
+              ? classes.AllBubbles__RightAnimation
+              : classes.AllBubbles__LeftAnimation
+          }`}>
           <Bubble
             title={props.fifthBubbleTitle}
             content={props.fifthBubbleContent}

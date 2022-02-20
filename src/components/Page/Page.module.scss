@@ -1,3 +1,5 @@
+@import "../../assets/Animations/Animations.module.scss";
+
 .Page {
   display: flex;
   flex-direction: column;
@@ -65,6 +67,18 @@
 
   &__6thBubble {
     grid-area: f;
+  }
+
+  &__LeftAnimation {
+    animation: fromLeft 2s ease;
+  }
+
+  &__RightAnimation {
+    animation: fromRight 2s ease;
+  }
+
+  &__CenterAnimation {
+    animation: center 2s ease;
   }
 }
 
