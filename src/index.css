@@ -30,7 +30,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--cl-yellow);
+  background: var(--cl-black);
 }
 
 code {

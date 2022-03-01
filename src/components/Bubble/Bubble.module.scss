@@ -12,11 +12,12 @@
   align-items: center;
   font-size: 1.3rem;
   transition: all 1s ease;
+  line-height: 1.5;
 
   &:hover {
-    width: 70rem;
-    height: 20rem;
-    box-shadow: 0 1.5rem 3rem var(--cl-orange);
+    width: 80rem;
+    height: 25rem;
+    box-shadow: 0 2rem 4rem var(--cl-orange);
   }
 }
 
@@ -32,4 +33,14 @@
 
 .Hidden {
   opacity: 0;
+}
+
+.TrulyHidden {
+  display: none;
+}
+
+.Link {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 2rem;
 }

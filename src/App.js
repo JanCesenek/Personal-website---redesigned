@@ -1,98 +1,98 @@
 import "./App.scss";
 import Page from "./components/Page/Page";
-import React, { useState } from "react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [firstPage, setFirstPage] = useState(true);
-  const [secondPage, setSecondPage] = useState(false);
-  const [thirdPage, setThirdPage] = useState(false);
-
-  const setFirst = () => {
-    setFirstPage(!firstPage);
-  };
-
-  const setSecond = () => {
-    setSecondPage(!secondPage);
-  };
-
-  const setThird = () => {
-    setThirdPage(!thirdPage);
-  };
-
   return (
     <div className="App">
       <div className="Align">
-        <Page
-          type="Five"
-          pageNumber="One"
-          title="Johnny Garlic - modern websites suited for your needs"
-          firstBubbleTitle="What do I do for living?"
-          firstBubbleContent="I make modern, responsive website suited exactly for your needs."
-          secondBubbleTitle="Why should you choose me?"
-          secondBubbleContent="Lorem ipsum."
-          thirdBubbleTitle="How can you contact me?"
-          thirdBubbleContent="Lorem ipsum."
-          fourthBubbleTitle="What makes me more affordable than the competition on the market?"
-          fourthBubbleContent="Lorem ipsum."
-          fifthBubbleTitle="How can you be sure I am flexible and will make you any website that you need?"
-          fifthBubbleContent="Lorem ipsum."
-          firstPage={firstPage}
-          secondPage={secondPage}
-          thirdPage={thirdPage}
-          changeFirstPage={setFirst}
-          changeSecondPage={setSecond}
-          changeThirdPage={setThird}
-        />
-      </div>
-      <div className="Align">
-        <Page
-          type="Six"
-          pageNumber="Two"
-          title="My web designs"
-          firstBubbleTitle="Design 1"
-          firstBubbleContent="Answer 1"
-          secondBubbleTitle="Design 2"
-          secondBubbleContent="Answer 2"
-          thirdBubbleTitle="Design 3"
-          thirdBubbleContent="Answer 3"
-          fourthBubbleTitle="Design 4"
-          fourthBubbleContent="Answer 4"
-          fifthBubbleTitle="Design 5"
-          fifthBubbleContent="Answer 5"
-          sixthBubbleTitle="Design 6"
-          sixthBubbleContent="Answer 6"
-          firstPage={firstPage}
-          secondPage={secondPage}
-          thirdPage={thirdPage}
-          changeFirstPage={setFirst}
-          changeSecondPage={setSecond}
-          changeThirdPage={setThird}
-        />
-      </div>
-      <div className="Align">
-        <Page
-          type="Six"
-          pageNumber="Three"
-          title="My applications"
-          firstBubbleTitle="Application 1"
-          firstBubbleContent="Answer 1"
-          secondBubbleTitle="Application 2"
-          secondBubbleContent="Answer 2"
-          thirdBubbleTitle="Application 3"
-          thirdBubbleContent="Answer 3"
-          fourthBubbleTitle="Application 4"
-          fourthBubbleContent="Answer 4"
-          fifthBubbleTitle="Application 5"
-          fifthBubbleContent="Answer 5"
-          sixthBubbleTitle="Application 6"
-          sixthBubbleContent="Answer 6"
-          firstPage={firstPage}
-          secondPage={secondPage}
-          thirdPage={thirdPage}
-          changeFirstPage={setFirst}
-          changeSecondPage={setSecond}
-          changeThirdPage={setThird}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Page
+                type="Five"
+                pageNumber="One"
+                title="Johnny Garlic - Unique websites tailored for your needs"
+                firstBubbleTitle="What do I do for living?"
+                firstBubbleContent="I make modern, responsive website suited exactly for your needs."
+                secondBubbleTitle="Why should you choose me?"
+                secondBubbleContent="Although I don't have an IT degree, I have started from scratch in August 2020
+                learning online on my own without any prior knowledge and since then have made
+                enormous progress. I had to make several times more effort than any web developer
+                with a degree to get to this level so quickly. I spend several hours a day working
+                on my projects as well as gaining additional knowledge through online courses."
+                thirdBubbleTitle="How can you contact me?"
+                fourthBubbleTitle="What makes me more affordable than the competition on the market?"
+                fourthBubbleContent="I don't have a lot of experience, therefore don't charge too much money. I might
+                take a little bit more time than more experienced competition, but I will do the
+                same job for less money."
+                fifthBubbleTitle="How can you be sure I am flexible and will make you any website that you need?"
+                fifthBubbleContent="Why don't you just take a look? Just click on the next page to see some of my finished projects."
+                contact
+              />
+            }
+          />
+          <Route
+            path="/designs"
+            element={
+              <Page
+                type="Six"
+                pageNumber="Two"
+                title="My projects - web designs"
+                firstBubbleTitle="Travelling blog"
+                firstBubbleContent="My first website ever. Simple blog about studying abroad, especially focused on
+                  the UK. As it was previously aimed to be deployed, but eventually left unfinished,
+                  this is the only website without lorem ipsum (randomly generated text).
+                  Note: The only thing unfinished about the project is the content, which is not
+                    important for design purposes, therefore some information is not verified!"
+                secondBubbleTitle="Chulak junk shop"
+                secondBubbleContent="A toy project - fictional junk shop based on my most favourite TV show Stargate.
+                  Uninitiated will probably not understand the content, but it's the design that
+                  matters, right?"
+                thirdBubbleTitle="Plumbing services"
+                thirdBubbleContent="Design made for any self-employed plumber."
+                fourthBubbleTitle="Chess blog"
+                fourthBubbleContent="A simple blog teaching visitors the basic principles of chess as well as providing
+                  the latest news from the chess world."
+                fifthBubbleTitle="Design 5"
+                fifthBubbleContent="Answer 5"
+                sixthBubbleTitle="Design 6"
+                sixthBubbleContent="Answer 6"
+                firstLink="/Project1/BlogEN.html"
+                secondLink="/Project2/index.html"
+                thirdLink="/Project3/index.html"
+              />
+            }
+          />
+          <Route
+            path="/apps"
+            element={
+              <Page
+                type="Six"
+                pageNumber="Three"
+                title="My projects - apps and games"
+                firstBubbleTitle="Word chain game"
+                firstBubbleContent="Simple word chain game - players keep adding words, the first letter of the new
+                  word has to match the last letter of the previous word (e.g 'shark - kit')"
+                secondBubbleTitle="Matrix banking"
+                secondBubbleContent="Futuristic I-banking, I added some spice not to make it look too boring, but it
+                  works almost the same way as a classic one."
+                thirdBubbleTitle="Application 3"
+                thirdBubbleContent="Answer 3"
+                fourthBubbleTitle="Application 4"
+                fourthBubbleContent="Answer 4"
+                fifthBubbleTitle="Application 5"
+                fifthBubbleContent="Answer 5"
+                sixthBubbleTitle="Application 6"
+                sixthBubbleContent="Answer 6"
+                firstLink="/App1/index.html"
+                secondLink="/App2/index.html"
+              />
+            }
+          />
+        </Routes>
       </div>
     </div>
   );
